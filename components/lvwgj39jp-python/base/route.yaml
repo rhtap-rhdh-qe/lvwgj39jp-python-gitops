@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: lvwgj39jp-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: lvwgj39jp-python 
+  name: lvwgj39jp-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: lvwgj39jp-python
+    weight: 100 
